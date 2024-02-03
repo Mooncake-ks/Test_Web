@@ -1,3 +1,8 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
 body{
    font-size: 15px;
    line-height: 1.6;
@@ -12,7 +17,7 @@ body{
 
 .headerCustom{
     width: 100%;
-
+    padding-top: 30px;
     position: absolute;
     top: 0;
     left: 0;
@@ -37,12 +42,31 @@ body{
     margin: 0 10px;
     color: white;
     text-decoration: none;
-
+    position: relative;
     transition: color 0.2s linear;
+}
+
+.navLink::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    
+    background-color: black;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    transition: opacity 0.2s linear;
 }
 
 .navLink:hover{
     color: black;
+}
+
+.navLink:hover::after{
+    opacity: 1;
 }
 
 .headerInner{
@@ -56,13 +80,74 @@ h1,h1,h3,h4,h5,h6{
 }
 /*Главная страница*/
 .home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
     height: 100vh;
-    background: url("../css/images/starts.jpg") center no-repeat;
+    background: url("../css/images/лес1.jpg") center no-repeat ;
+    /*filter: brightness(68%);*/
     background-size: cover;
 }
 .container{
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.introInner{
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+    text-align: center;
+}
+.introTitle{
+    font-size: 150px;
+    filter: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    line-height: 1;
+}
+
+.introTitle:after{
+    content: "";
+    display: block;
+    width: 600px;
+    height: 3px;
+    margin: 10px auto 100px;
+    background-color: white;
+}
+
+.button{
+    display: inline-block;
+    vertical-align: top;
+    padding: 8px 25px;
+    color: white;
+    border: 3px solid white;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.2s linear,color 0.2s linear;
+}
+
+.button:hover{
+    background-color: white;
+    color: black;
+}
+
+/*Slider*/
+.slider{
+    display: flex;
+    justify-content: space-between;
+}
+
+.sliderItem{
+    width: 24%;
+    padding: 20px 0;
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
 }
