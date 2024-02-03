@@ -140,14 +140,21 @@ h1,h1,h3,h4,h5,h6{
 
 /*Slider*/
 .slider{
+    margin: 40px;
     display: flex;
     justify-content: space-between;
 }
 
 .sliderItem{
     width: 24%;
-    padding: 20px 0;
+    padding: 15px 0;
+    border-top: 3px solid white;
+    opacity: 0.7;
     color: white;
     font-size: 18px;
     text-transform: uppercase;
+}
+
+.sliderItem.Act{
+    opacity: 1;
 }
